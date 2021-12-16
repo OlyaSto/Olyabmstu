@@ -1,0 +1,32 @@
+{% extends 'master/base.html' %}
+
+{% block title %} Фантастические существа {% endblock %}
+
+{% block styles %}
+body {
+    background-color: orange;
+    color: black;
+    font-family: 'Calibri';
+}
+li {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+li:hover {
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+{% endblock %}
+
+
+{% block content %}
+    <h1>Список существ</h1>
+    <ol>
+        {% for i in crs %}
+        <li><a href="{% url 'detail' i.id %}">{{i.title}}</a></li>
+        {% endfor %}
+    </ol>
+{% endblock %}
