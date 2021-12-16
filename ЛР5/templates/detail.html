@@ -1,0 +1,9 @@
+<{% extends 'main/base.html' %}
+
+{% block title %} Раса{% endblock %}
+
+{% block content %}
+    <div>Название: {{ cr.name }}</div>
+    <div>Описание: {{ cr.discription }}</div>
+    <div><a href="{% url 'cann' cr.id %}">Способности</a></div>
+{% endblock %}
