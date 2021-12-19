@@ -1,0 +1,41 @@
+<{% extends 'main/base.html' %}
+
+{% block styles %}
+body {
+    color: black;
+    font-family: 'Calibri';
+}
+li {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+li:hover {
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+ h1 {
+    font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */
+    font-size: 500%; /* Размер шрифта в процентах */
+   }
+
+{% endblock %}
+
+{% block title %}Добавление записи{% endblock %}
+
+{% block content %}
+
+<h1>Форма для добавления расы</h1>
+<body class="container">
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="name" value="{{cr.name}}"> <br>
+        <input type="text" name="discription" value="{{cr.discription}}"  size = '140'><br>
+
+        <input type="submit" value="Сохранить" >
+    </form>
+</body>
+{% endblock %}

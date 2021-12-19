@@ -1,0 +1,37 @@
+<{% extends 'main/base.html' %}
+
+{% block styles %}
+body {
+    color: black;
+    font-family: 'Calibri';
+}
+li {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+li:hover {
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+ h1 {
+    font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */
+    font-size: 500%; /* Размер шрифта в процентах */
+   }
+
+{% endblock %}
+
+{% block title %} Раса{% endblock %}
+
+{% block content %}
+<body bgcolor="#ffffe0">
+    <big><h1>{{ cr.name }}</h1>
+    <div><strong>Описание:</strong> {{ cr.discription }}</div>
+<br>
+    <div><a href="{% url 'cann' cr.id %}">Способности</a></div> <br>
+    <div><a href="{% url 'update' cr.id %}"><font color = "red">Изменить </font></a></div>
+    <div><a href="delete"><font color = "red">Удалить</font></a></div>
+    </big>
+{% endblock %}
